@@ -1,0 +1,15 @@
+def solution(A, K):
+    if not A:
+        return A
+    les = len(A)
+    if K!=0:
+        K%=les
+    else:
+        return A
+    if (K!=les):
+        temp = A[(les-K):]
+        del A[(les-K):]
+        temp.extend(A)
+    else:
+        return A
+    return temp

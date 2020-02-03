@@ -1,0 +1,15 @@
+def solution(N):
+    max= 0
+    gap= 0
+    first = False
+    while(N>0):
+        if(N%2==0):
+            if first:
+                gap+=1
+        else:
+            first = True
+            if max<gap:
+                max = gap
+            gap=0
+        N=int(N/2)
+    return max

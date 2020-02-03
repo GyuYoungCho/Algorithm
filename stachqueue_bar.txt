@@ -1,0 +1,13 @@
+def solution(arrangement):
+    answer = 0
+    bar = 0
+    a = arrangement.replace('()','c')
+    for i in a:
+        if i=='(':
+            bar+=1
+        elif i==')':
+            bar-=1
+            answer+=1
+        else:
+            answer+=bar
+    return answer

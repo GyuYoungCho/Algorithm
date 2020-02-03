@@ -1,0 +1,18 @@
+genres = ["classic", "pop", "classic", "classic", "pop"]
+plays = [500, 600, 150, 800, 2500]
+ans, max = {}, {}
+ans2, end, ans3 = [], [], []
+num = 0
+for i, j in zip(genres, plays):
+    ans[i] = ans.get(i, [])
+    ans[i].append(j)
+for i in ans.keys():
+    ans[i].sort(reverse=True)
+    max[i] = sum(ans[i],0.0)
+max = sorted(max.items(), reverse=True)
+for i in max:
+    end.append(ans[i[0]][0])
+    end.append(ans[i[0]][1])
+for i in end:
+    ans3.append(plays.index(i))
+ans3

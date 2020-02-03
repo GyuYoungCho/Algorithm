@@ -1,0 +1,11 @@
+def solution(A):
+    start = A[0]
+    end = sum(A[1:])
+    min_diff = abs(end-start)
+    if len(A)==2:
+        return min_diff
+    for i in range(1,len(A)-1):
+        start +=  A[i]
+        end -= A[i]
+        min_diff = min(abs(start-end),min_diff)
+    return min_diff

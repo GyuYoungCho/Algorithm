@@ -1,0 +1,4 @@
+import math
+def solution(X, Y, D):
+    ti = math.ceil((Y-X)/D)
+    return ti

@@ -1,0 +1,9 @@
+def solution(n, lost, reserve):
+    uni_reserve = set(reserve) - set(lost)
+    uni_lost = set(lost) - set(reserve)
+    for i in uni_reserve:
+        if i-1 in uni_lost:
+            uni_lost.remove(i-1)
+        elif i+1 in uni_lost:
+            uni_lost.remove(i+1)
+    return n - len(uni_lost)

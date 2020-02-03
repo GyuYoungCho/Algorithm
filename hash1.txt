@@ -1,0 +1,11 @@
+participant.sort()
+completion.sort()
+for i in range(len(completion)):
+    if participant[i] != completion[i]:
+        return participant[i]
+    return participant[-1]
+
+    a = "".join(item for item in set(participant) if participant.count(item)>1)
+    b = "".join(x for x in participant if x not in completion)
+    answer = a+b
+    return answer

@@ -1,0 +1,15 @@
+import math 
+
+def solution(progresses, speeds):
+    rewind = []
+    answer = []
+    les = len(speeds)
+    for i, j in zip(progresses,speeds):
+        rewind.append(math.ceil((100-i)/j))
+    k = 0
+    for i in range(1,les):
+        if rewind[k] < rewind[i]:
+            answer.append(i-k)
+            k = i
+    answer.append(les-k)
+    return answer

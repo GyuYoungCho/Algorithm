@@ -1,0 +1,7 @@
+def solution(citations):
+    citations.sort()
+    les = len(citations)
+    for i,j in enumerate(citations):
+        if (les-i)<=j:
+            return les-i
+    return 0

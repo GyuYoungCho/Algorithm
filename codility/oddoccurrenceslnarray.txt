@@ -1,0 +1,6 @@
+def solution(A):
+    les = len(A)
+    res = 0
+    for i in range(les):
+        res^=A[i]
+    return res

@@ -1,0 +1,15 @@
+def factorial(n):
+    if n == 1:
+        return 1
+    return n * factorial(n - 1)
+def solution(clothes):
+    col = {}
+    cloth = clothes[0][1]
+    for i,j in clothes:
+        col[j] = col.get(j, [])
+        col[j].append(i)
+    if len(col)==1:
+        return len(col[cloth])
+    else:
+        k = len(col)+1
+        return factorial(k)-1
