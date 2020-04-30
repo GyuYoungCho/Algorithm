@@ -1,0 +1,26 @@
+from itertools import permutations
+
+def solution(baseball):
+    ap = []
+    flag = 0
+    count = 0
+    check = list(permutations([1,2,3,4,5,6,7,8,9],3))
+    for base in baseball:
+        str_base = list(str(base[0]))
+        for ch in check[:]:
+            st = 0
+            count = 0
+            for i,j in enumerate(str_base):
+                if int(j) == ch[i]:
+                    st += 1
+            ball = len(set(str_base) & set(str(ch)))-st
+            if base[1] != st:
+                flag = 0
+            elif base[2] != ball:
+                flag = 0
+            else:
+                flag = 1
+            if flag == 0:
+                check.remove(ch)
+            count += 1
+    return len(check)
